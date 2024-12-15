@@ -24,23 +24,24 @@ export default function Home({ authorDetails, pubs, projs }) {
   const source = (
     <div>
       <p>
-        I am a Research Assistant at the{' '}
+        I am currently pursuing M.S. in Computer Science at Texas A&M University, under the
+        supervision of Prof.{' '}
         <Link
-          className=" text-inherit text-emerald-700 no-underline"
-          href="https://facdent.hku.hk"
           target="_blank"
+          className="text-inherit text-emerald-700 no-underline"
+          href="https://people.tamu.edu/~xinli/"
         >
-          Faculty of Dentistry
+          Xin Li
         </Link>{' '}
-        in the{' '}
+        and Prof. Wenping Wang. Previously, I was a Research Assistant in{' '}
         <Link
           className=" text-inherit text-emerald-700 no-underline"
           href="https://www.hku.hk"
           target="_blank"
         >
-          University of Hong Kong
-        </Link>{' '}
-        supervised by postdoctoral fellow{' '}
+          the University of Hong Kong
+        </Link>
+        {''}, working with Postdoctoral Fellow{' '}
         <Link
           target="_blank"
           className="text-inherit text-emerald-700 no-underline"
@@ -56,13 +57,13 @@ export default function Home({ authorDetails, pubs, projs }) {
         >
           Lifeng Zhu
         </Link>
-        . Before joining HKU, I received my B. Eng. degree from the{' '}
+        . I was an honored graduate, earning my B.Eng. degree from{' '}
         <Link
           className=" text-inherit text-emerald-700 no-underline"
           href="https://ins.seu.edu.cn/yk_english/main.htm"
           target="_blank"
         >
-          School of Instrument Science and Engineering
+          the School of Instrument Science and Engineering
         </Link>
         ,{' '}
         <Link
@@ -75,9 +76,12 @@ export default function Home({ authorDetails, pubs, projs }) {
         .
       </p>
       <p>
-        Research interests: <span className="font-medium">Computer Graphics (CG)</span> and{' '}
-        <span className="font-medium">Human Computer Interaction (HCI)</span>.
+        Research interests: <span className="font-medium">Computer Graphics</span>,{' '}
+        <span className="font-medium">Robotics</span> and{' '}
+        <span className="font-medium">Computer Vision</span>.
       </p>
+
+      <strong>This page is under construction. Please check back later for more updates.</strong>
       <div>
         <p className="mb-2 mt-10 text-2xl font-bold">Project Spotlights</p>
         {projs.map((proj, idx) => {

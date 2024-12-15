@@ -5,7 +5,7 @@ const publicationsData = [
     first proposed for explicit inverse matrix approximation, which attains 
     enhanced convergence rate and accuracy compared to standard NSA for various 
     MIMO antenna configurations. wNSA is then combined with EPA to propose an 
-    efficient, flexible, and hardware-friendly EPA-wNSA detector.`,
+    efficient, flexible, and hardware-friendly EPA-wNSA detector.  `,
     tags: [
       'Massive MIMO',
       'approximate expectation propagation',

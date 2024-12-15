@@ -1,15 +1,8 @@
 ---
 name: Huijun Han
-avatar: /static/images/avatar.png
-# occupation: Professor of Atmospheric Science
-# company: Stanford University
-email: hanhj.loquat@gmail.com
-# twitter: https://twitter.com/Twitter
-# linkedin: https://www.linkedin.com
-github: https://github.com/CarolineJun
+avatar: /static/images/profile.jpg
+email: hazelhan@tamu.edu
+github: https://github.com/ArchHazel/
 ---
 
-I am a Research Assistant at the Faculty of Dentistry in the University of Hong Kong.
-Before joining HKU, I received my B. Eng. degree from the School of Instrument Science and Engineering, Southeast University.
-
-I believe enthusiasm and responsibility are the cure for fear and inertia.
+I am currently pursuing M.S. in Computer Science at Texas A&M University, under the supervision of Prof. Xin Li and Prof. Wenping Wang. Previously, I was a Research Assistant at the Faculty of Dentistry, the University of Hong Kong, working with Postdoctoral Fellow Congyi Zhang and Prof. Lifeng Zhu. Prior to that, I earned my B.Eng. degree from the School of Instrument Science and Engineering at Southeast University.
