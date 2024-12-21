@@ -83,7 +83,7 @@ export default function Home({ authorDetails, pubs, projs }) {
 
       <strong>This page is under construction. Please check back later for more updates.</strong>
       <div>
-        <p className="mb-2 mt-10 text-2xl font-bold">Project Spotlights</p>
+        <p className="hazel-header mb-2 mt-10 text-2xl font-bold">Project Spotlights</p>
         {projs.map((proj, idx) => {
           const { title, description } = proj
           return (
@@ -92,21 +92,22 @@ export default function Home({ authorDetails, pubs, projs }) {
               className="space-y-2 xl:grid xl:grid-cols-3 xl:items-baseline xl:space-y-0"
             >
               <div className="xl:col-span-3">
-                <h3 className="my-0 text-xl font-medium leading-8 tracking-tight text-gray-900 dark:text-gray-100">
+                <h3 className="hazel-title my-0 text-xl font-medium leading-8 tracking-tight text-gray-900 dark:text-gray-100">
                   {title}
                 </h3>
-                <div className="prose max-w-none text-gray-500 dark:text-gray-400">
-                  {description}
-                </div>
+                <div className=" max-w-none text-gray-500 dark:text-gray-400">{description}</div>
               </div>
             </div>
           )
         })}
       </div>
       <div>
-        <p className="mb-2 mt-10 text-2xl font-bold">Selected publications</p>
+        <p className="hazel-header mb-2 mt-10 text-2xl font-bold">Selected publications</p>
         {pubs.map((pub, idx) => {
-          const { date, title, abstract, tags, links, imgSrc } = pub
+          const { date, title, abstract, author, tags, links, imgSrc } = pub
+          const name = 'Huijun Han'
+          const regex = new RegExp(`(${name})`, 'gi')
+          const parts = author.split(regex)
           return (
             <div
               key={idx}
@@ -114,9 +115,18 @@ export default function Home({ authorDetails, pubs, projs }) {
             >
               <div className="xl:col-span-3">
                 <div>
-                  <h3 className="my-0 text-xl font-medium leading-8 tracking-tight text-gray-900 dark:text-gray-100">
+                  <h3 className="hazel-title my-0 text-xl font-medium leading-8 tracking-tight text-gray-900 dark:text-gray-100">
                     {title}
                   </h3>
+                  {parts.map((part, index) =>
+                    part.toLowerCase() === name.toLowerCase() ? (
+                      <span key={index} style={{ fontWeight: 'bold' }}>
+                        {part}
+                      </span>
+                    ) : (
+                      part
+                    )
+                  )}
                   <div className="text-base font-medium leading-6 text-gray-500 dark:text-gray-400">
                     <time dateTime={date}>{formatDate(date)}</time>
                   </div>
@@ -139,7 +149,7 @@ export default function Home({ authorDetails, pubs, projs }) {
   return (
     <>
       <PageSEO title={siteMetadata.title} description={siteMetadata.description} />
-      <div className="mono-type divide-y divide-gray-200 dark:divide-gray-700">
+      <div className=" divide-y divide-gray-200 dark:divide-gray-700">
         {/* <MDXLayoutRenderer
           layout={frontMatter.layout || DEFAULT_LAYOUT}
           mdxSource={mdxSource}

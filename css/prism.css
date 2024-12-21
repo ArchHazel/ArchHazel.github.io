@@ -7,7 +7,7 @@
 
 /* Code title styles */
 .remark-code-title {
-  @apply rounded-t bg-gray-700 px-5 py-3 font-mono text-sm font-bold text-gray-200;
+  @apply rounded-t bg-gray-700 px-5 py-3  text-sm font-bold text-gray-200;
 }
 
 .remark-code-title + div > pre {
@@ -137,4 +137,20 @@
 
 .token.table {
   display: inline;
+}
+
+.hazel {
+  color: rgb(26, 26, 23);
+}
+
+.hazel > div > p {
+  margin-bottom: 0.8rem !important;
+}
+
+.hazel-header {
+  color: rgb(0, 0, 0);
+}
+
+.hazel-title {
+  margin-top: 0.5rem;
 }
