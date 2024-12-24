@@ -23,7 +23,6 @@ export async function getStaticProps() {
 export default function Home({ authorDetails, pubs, projs }) {
   const { theme, resolvedTheme } = useTheme()
 
-  // modify favicon in HEAD based on theme
   const favicon =
     theme === 'dark' || resolvedTheme === 'dark' ? '/favicon/logo_night.jpg' : '/favicon/logo.png'
   // <link rel="icon" href = {theme === 'dark'  || resolvedTheme === "dark" ? '/favicon/logo_night.jpg' : '/favicon/logo.png'} type="image/x-icon" /> </Head>
@@ -153,7 +152,7 @@ export default function Home({ authorDetails, pubs, projs }) {
           .sort((a, b) => new Date(b.date) - new Date(a.date))
 
           .map((pub, idx) => {
-            const { date, title, abstract, author, tags, links, imgSrc } = pub
+            const { date, title, abstract, author, tags, links, imgSrc, published } = pub
             const name = 'Huijun Han'
             const regex = new RegExp(`(${name})`, 'gi')
             const parts = author.split(regex)
@@ -176,8 +175,11 @@ export default function Home({ authorDetails, pubs, projs }) {
                         part
                       )
                     )}
-                    <div className="text-base font-medium leading-6 text-gray-500 dark:text-gray-400">
+                    {/* <div className="text-base font-medium leading-6 text-gray-500 dark:text-gray-400">
                       <time dateTime={date}>{formatDate(date)}</time>
+                    </div> */}
+                    <div className="text-base font-medium leading-6 text-gray-500 dark:text-gray-400">
+                      <p>{published} </p>
                     </div>
                   </div>
                   {/* <div className="prose max-w-none text-gray-500 dark:text-gray-400">{abstract}</div> */}

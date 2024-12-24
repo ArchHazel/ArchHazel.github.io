@@ -1,8 +1,8 @@
 const headerNavLinks = [
+  { href: '/', title: 'Home' },
   { href: '/publications', title: 'Publications' },
-  // { href: '/tags', title: 'Tags' },
+  // { href: 'https://lyq.me/scholar', title: 'Longlong' },
   // { href: '/projects', title: 'Projects' },
-  // { href: '/about', title: 'About' },
   { href: '/static/cv.pdf', title: 'CV' },
 ]
 

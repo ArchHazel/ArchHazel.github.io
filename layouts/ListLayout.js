@@ -50,58 +50,65 @@ export default function ListLayout({ pubs, title, initialDisplayPubs = [], pagin
         </div>
         <ul>
           {!filteredPubs.length && 'No publication found.'}
-          {displayPubs.map((pub, idx) => {
-            const { date, title, abstract, tags, links, imgSrc } = pub
-            return (
-              <li key={idx} className="py-4">
-                <article className="space-y-2 xl:grid xl:grid-cols-4 xl:items-baseline xl:space-y-0">
-                  <dl>
-                    <dt className="sr-only">Published on</dt>
-                    <dd className="text-base font-medium leading-6 text-gray-500 dark:text-gray-400">
-                      <time dateTime={date}>{formatDate(date)}</time>
-                      {/* <Image
-                        className="object-cover object-center md:h-36 lg:h-48"
-                        alt={title}
-                        src={imgSrc}
-                        width={544}
-                        height={306}
-                      /> */}
-                    </dd>
-                  </dl>
-                  <div className="space-y-3 xl:col-span-3">
-                    <div>
-                      <h3 className="text-2xl font-bold leading-8 tracking-tight">
-                        <p className="text-gray-900 dark:text-gray-100">{title}</p>
-                      </h3>
-                      <div className="flex flex-wrap">
-                        {tags.map((tag) => (
-                          <Tag key={tag} text={tag} />
+          {displayPubs
+            .slice()
+            .sort((a, b) => new Date(b.date) - new Date(a.date))
+            .map((pub, idx) => {
+              const { date, title, abstract, tags, links, imgSrc, width, height, hrefer } = pub
+              return (
+                <li key={idx} className="py-4">
+                  <article className="space-y-2 xl:grid xl:grid-cols-4 xl:items-baseline xl:space-y-0">
+                    <dl className="flex flex-col space-y-4">
+                      <dt className="sr-only">Published on</dt>
+                      <dd className="text-base font-medium leading-6 text-gray-500 dark:text-gray-400">
+                        <time dateTime={date}>{formatDate(date)}</time>
+                      </dd>
+                      <div className="relative h-36 w-full">
+                        <a href={hrefer}>
+                          <Image
+                            className="object-cover object-center "
+                            alt={title}
+                            src={imgSrc}
+                            layout="intrinsic" // Ensure the aspect ratio is maintained
+                            width={width}
+                            height={height}
+                          />
+                        </a>
+                      </div>
+                    </dl>
+
+                    <div className="space-y-3 px-8 xl:col-span-3">
+                      <div>
+                        <h3 className="text-2xl font-bold leading-8 tracking-tight">
+                          <p className="text-gray-900 dark:text-gray-100">{title}</p>
+                        </h3>
+                      </div>
+                      <div>
+                        <div className="flex flex-wrap">
+                          {tags.map((tag) => (
+                            <Tag key={tag} text={tag} />
+                          ))}
+                        </div>
+                      </div>
+                      <div className="prose max-w-none text-gray-500 dark:text-gray-400">
+                        {abstract}
+                      </div>
+                      <div className="text-gray-500 underline dark:text-gray-400">
+                        {links.map(({ name, link }, idx) => (
+                          <Link
+                            key={idx}
+                            href={link}
+                            className="pr-6 text-gray-900 dark:text-gray-100"
+                          >
+                            {name}
+                          </Link>
                         ))}
                       </div>
                     </div>
-                    <div className="prose max-w-none text-gray-500 dark:text-gray-400">
-                      {abstract}
-                    </div>
-                    <div className="text-gray-500 underline dark:text-gray-400">
-                      {links.map(({ name, link }, idx) => (
-                        <Link
-                          key={idx}
-                          href={link}
-                          className="pr-6 text-gray-900 dark:text-gray-100"
-                        >
-                          {name}
-                        </Link>
-                      ))}
-
-                      {/* <Link href={href} className="pr-6 text-gray-900 dark:text-gray-100">
-                        IEEE
-                      </Link> */}
-                    </div>
-                  </div>
-                </article>
-              </li>
-            )
-          })}
+                  </article>
+                </li>
+              )
+            })}
         </ul>
       </div>
       {pagination && pagination.totalPages > 1 && !searchValue && (
