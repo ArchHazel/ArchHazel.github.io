@@ -54,7 +54,12 @@ export default function ListLayout({ pubs, title, initialDisplayPubs = [], pagin
             .slice()
             .sort((a, b) => new Date(b.date) - new Date(a.date))
             .map((pub, idx) => {
-              const { date, title, abstract, tags, links, imgSrc, width, height, hrefer } = pub
+              const { date, title, author, abstract, tags, links, imgSrc, width, height, hrefer } =
+                pub
+              const name = 'Huijun Han'
+              const regex = new RegExp(`(${name})`, 'gi')
+              const parts = author.split(regex)
+
               return (
                 <li key={idx} className="py-4">
                   <article className="space-y-2 xl:grid xl:grid-cols-4 xl:items-baseline xl:space-y-0">
@@ -77,23 +82,38 @@ export default function ListLayout({ pubs, title, initialDisplayPubs = [], pagin
                       </div>
                     </dl>
 
-                    <div className="space-y-3 px-8 xl:col-span-3">
+                    <div className="space-y-2 px-8 xl:col-span-3">
                       <div>
-                        <h3 className="text-2xl font-bold leading-8 tracking-tight">
+                        <h3 className="hazel-pub-title text-2xl font-bold leading-8 tracking-tight">
                           <p className="text-gray-900 dark:text-gray-100">{title}</p>
                         </h3>
                       </div>
+
+                      <div className="hazel-pub-author flex flex-wrap">
+                        <p>
+                          {parts.map((part, index) =>
+                            part.toLowerCase() === name.toLowerCase() ? (
+                              <span key={index} style={{ fontWeight: 'bold' }}>
+                                {part}
+                              </span>
+                            ) : (
+                              part
+                            )
+                          )}{' '}
+                        </p>
+                      </div>
+
                       <div>
-                        <div className="flex flex-wrap">
+                        <div className="hazel-pub-title flex flex-wrap">
                           {tags.map((tag) => (
                             <Tag key={tag} text={tag} />
                           ))}
                         </div>
                       </div>
-                      <div className="prose max-w-none text-gray-500 dark:text-gray-400">
+                      <div className=" hazel-single prose max-w-none text-gray-500 dark:text-gray-400">
                         {abstract}
                       </div>
-                      <div className="text-gray-500 underline dark:text-gray-400">
+                      <div className="hazel-pub-title text-gray-500 underline dark:text-gray-400">
                         {links.map(({ name, link }, idx) => (
                           <Link
                             key={idx}

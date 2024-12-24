@@ -32,13 +32,13 @@ const publicationsData = [
     links: [
       {
         name: 'Paper',
-        link: 'https://arxiv.org/abs/2410.17101',
+        link: 'https://arxiv.org/pdf/2410.17101',
       },
     ],
     show: true,
     width: 2098,
     height: 958,
-    hrefer: 'https://arxiv.org/abs/2410.17101',
+    hrefer: 'https://arxiv.org/pdf/2410.17101',
   },
   {
     title: 'AURORA: Automated Unleash of 3D Room Outlines for VR Applications',
@@ -74,9 +74,9 @@ const publicationsData = [
     height: 1370,
     imgSrc: '/static/images/reassembly-suvey.png',
     published: "Eurographics (EG)  '25 STARs (conditionally accept with minor revisions)",
-    links: [{ name: ' Paper', link: 'https://arxiv.org/abs/2410.14770' }],
+    links: [{ name: ' Paper', link: 'https://arxiv.org/pdf/2410.14770' }],
     show: true,
-    hrefer: 'https://arxiv.org/abs/2410.14770',
+    hrefer: 'https://arxiv.org/pdf/2410.14770',
   },
   {
     title: 'Facial Surgery Preview Based on the Orthognathic Treatment Prediction',
@@ -87,11 +87,17 @@ const publicationsData = [
     date: '2025-1',
     width: 2400,
     height: 1370,
-    imgSrc: '/static/images/reassembly-suvey.png',
+    imgSrc: '/static/images/preview.gif',
     published: 'submitted to Computer Methods and Programs in Biomedicine (CMPB, under revision)',
-    links: [{ name: 'Paper', link: 'https://arxiv.org/pdf/2412.11045' }],
+    links: [
+      { name: 'Paper', link: 'https://arxiv.org/pdf/2412.11045' },
+      {
+        name: 'News Report',
+        link: 'https://datahub.hku.hk/articles/dataset/Supporting_data_for_Revealing_the_Potential_of_3D_Facial_Imaging_Exploring_Feasibility_Reliability_and_ClinicalApplications_in_Craniofacial_Practice_/26820532',
+      },
+    ],
     show: true,
-    hrefer: 'https://arxiv.org/abs/2410.14770',
+    hrefer: 'https://arxiv.org/pdf/2412.11045',
   },
 ]
 

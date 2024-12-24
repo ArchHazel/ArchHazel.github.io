@@ -122,31 +122,9 @@ export default function Home({ authorDetails, pubs, projs }) {
       </p>
 
       <strong>This page is under construction. Please check back later for more updates.</strong>
+
       <div>
-        <p className="hazel-header mb-2 mt-10 text-2xl font-bold dark:text-gray-100">
-          Project Spotlights
-        </p>
-        {projs.map((proj, idx) => {
-          const { title, description } = proj
-          return (
-            <div
-              key={idx}
-              className="space-y-2 xl:grid xl:grid-cols-3 xl:items-baseline xl:space-y-0"
-            >
-              <div className="xl:col-span-3">
-                <h3 className="hazel-title my-0 text-xl font-medium leading-8 tracking-tight text-gray-900 dark:text-gray-100">
-                  {title}
-                </h3>
-                <div className=" max-w-none text-gray-500 dark:text-gray-400">{description}</div>
-              </div>
-            </div>
-          )
-        })}
-      </div>
-      <div>
-        <p className="hazel-header mb-2 mt-10 text-2xl font-bold dark:text-gray-100">
-          Selected publications
-        </p>
+        <p className="hazel-header  text-2xl font-bold dark:text-gray-100">Selected publications</p>
         {pubs
           .slice()
           .sort((a, b) => new Date(b.date) - new Date(a.date))
@@ -166,6 +144,8 @@ export default function Home({ authorDetails, pubs, projs }) {
                     <h3 className="hazel-title my-0 text-xl font-medium leading-8 tracking-tight text-gray-900 dark:text-gray-100">
                       {title}
                     </h3>
+                  </div>
+                  <div className="hazel-author">
                     {parts.map((part, index) =>
                       part.toLowerCase() === name.toLowerCase() ? (
                         <span key={index} style={{ fontWeight: 'bold' }}>
@@ -183,7 +163,7 @@ export default function Home({ authorDetails, pubs, projs }) {
                     </div>
                   </div>
                   {/* <div className="prose max-w-none text-gray-500 dark:text-gray-400">{abstract}</div> */}
-                  <div className="text-gray-500 underline dark:text-gray-400">
+                  <div className="hazel-pub-title text-gray-500 underline dark:text-gray-400">
                     {links.map(({ name, link }, idx) => (
                       <Link key={idx} href={link} className="pr-6 text-gray-900 dark:text-gray-100">
                         {name}
@@ -194,6 +174,25 @@ export default function Home({ authorDetails, pubs, projs }) {
               </div>
             )
           })}
+      </div>
+      <div>
+        <p className="hazel-header  text-2xl font-bold dark:text-gray-100">Project Spotlights</p>
+        {projs.map((proj, idx) => {
+          const { title, description } = proj
+          return (
+            <div
+              key={idx}
+              className="space-y-2 xl:grid xl:grid-cols-3 xl:items-baseline xl:space-y-0"
+            >
+              <div className="xl:col-span-3">
+                <h3 className="hazel-title my-0 text-xl font-medium leading-8 tracking-tight text-gray-900 dark:text-gray-100">
+                  {title}
+                </h3>
+                <div className=" max-w-none text-gray-500 dark:text-gray-400">{description}</div>
+              </div>
+            </div>
+          )
+        })}
       </div>
     </div>
   )
