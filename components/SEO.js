@@ -1,6 +1,7 @@
 import Head from 'next/head'
 import { useRouter } from 'next/router'
 import siteMetadata from '@/data/siteMetadata'
+import { get } from 'rehype-citation/node/src/citation-js/core/plugins/input'
 
 const CommonSEO = ({ title, description, ogType, ogImage, twImage, canonicalUrl }) => {
   const router = useRouter()
@@ -130,7 +131,7 @@ export const BlogSEO = ({
       name: siteMetadata.author,
       logo: {
         '@type': 'ImageObject',
-        url: `${siteMetadata.siteUrl}${siteMetadata.siteLogo}`,
+        // url: `${siteMetadata.siteUrl}${siteMetadata.siteLogo}`,
       },
     },
     description: summary,

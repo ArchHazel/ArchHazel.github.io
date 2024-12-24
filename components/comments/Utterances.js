@@ -6,6 +6,8 @@ import siteMetadata from '@/data/siteMetadata'
 const Utterances = () => {
   const [enableLoadComments, setEnabledLoadComments] = useState(true)
   const { theme, resolvedTheme } = useTheme()
+  console.log('theme:', theme)
+  console.log('resolvedTheme:', resolvedTheme)
   const commentsTheme =
     theme === 'dark' || resolvedTheme === 'dark'
       ? siteMetadata.comment.utterancesConfig.darkTheme

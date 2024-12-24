@@ -6,6 +6,8 @@ import siteMetadata from '@/data/siteMetadata'
 const Giscus = () => {
   const [enableLoadComments, setEnabledLoadComments] = useState(true)
   const { theme, resolvedTheme } = useTheme()
+  console.log('theme:', theme)
+  console.log('resolvedTheme:', resolvedTheme)
   const commentsTheme =
     siteMetadata.comment.giscusConfig.themeURL === ''
       ? theme === 'dark' || resolvedTheme === 'dark'

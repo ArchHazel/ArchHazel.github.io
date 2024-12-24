@@ -1,11 +1,10 @@
 import Mail from './mail.svg'
 import Github from './github.svg'
-import Facebook from './facebook.svg'
+import Facebook from './icon.svg'
 import Youtube from './youtube.svg'
 import Linkedin from './linkedin.svg'
 import Twitter from './twitter.svg'
-
-// Icons taken from: https://simpleicons.org/
+import Icon from './icon.svg'
 
 const components = {
   mail: Mail,
@@ -14,6 +13,7 @@ const components = {
   youtube: Youtube,
   linkedin: Linkedin,
   twitter: Twitter,
+  icon: Icon,
 }
 
 const SocialIcon = ({ kind, href, size = 8 }) => {

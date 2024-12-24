@@ -10,6 +10,7 @@ import publicationsData from '@/data/publicationsData'
 import projectsData from '@/data/projectsData'
 import formatDate from '@/lib/utils/formatDate'
 import Tag from '@/components/Tag'
+import { useTheme } from 'next-themes'
 const DEFAULT_LAYOUT = 'AuthorLayout'
 
 export async function getStaticProps() {
@@ -20,6 +21,14 @@ export async function getStaticProps() {
 }
 
 export default function Home({ authorDetails, pubs, projs }) {
+  const { theme, resolvedTheme } = useTheme()
+
+  // modify favicon in HEAD based on theme
+  const favicon =
+    theme === 'dark' || resolvedTheme === 'dark' ? '/favicon/logo_night.jpg' : '/favicon/logo.png'
+  // <link rel="icon" href = {theme === 'dark'  || resolvedTheme === "dark" ? '/favicon/logo_night.jpg' : '/favicon/logo.png'} type="image/x-icon" /> </Head>
+  // change the favicon based on theme
+
   const { mdxSource, frontMatter } = authorDetails
   const source = (
     <div>
@@ -33,7 +42,15 @@ export default function Home({ authorDetails, pubs, projs }) {
         >
           Xin Li
         </Link>{' '}
-        and Prof. Wenping Wang. Previously, I was a Research Assistant in{' '}
+        and Prof.{' '}
+        <Link
+          target="_blank"
+          className="text-inherit text-emerald-700 no-underline"
+          href="https://engineering.tamu.edu/cse/profiles/Wang-Wenping.html"
+        >
+          Wenping Wang
+        </Link>
+        . Previously, I was a Research Assistant in{' '}
         <Link
           className=" text-inherit text-emerald-700 no-underline"
           href="https://www.hku.hk"
@@ -57,7 +74,7 @@ export default function Home({ authorDetails, pubs, projs }) {
         >
           Lifeng Zhu
         </Link>
-        . I was an honored graduate, earning my B.Eng. degree from{' '}
+        . I was a graduate with honors, earning my B.Eng. degree from{' '}
         <Link
           className=" text-inherit text-emerald-700 no-underline"
           href="https://ins.seu.edu.cn/yk_english/main.htm"
@@ -73,6 +90,30 @@ export default function Home({ authorDetails, pubs, projs }) {
         >
           Southeast University
         </Link>
+        . During my undergraduate years, I joined the{' '}
+        <Link
+          target="_blank"
+          className="text-inherit text-emerald-700 no-underline"
+          href="https://github.com/SEU-LEADS"
+        >
+          LEADS
+        </Link>{' '}
+        research group, where I worked under the supervision of Prof.{' '}
+        <Link
+          target="_blank"
+          className="text-inherit text-emerald-700 no-underline"
+          href="https://ieeexplore.ieee.org/author/37085417787"
+        >
+          Chuan Zhang
+        </Link>{' '}
+        and Postdoctoral Fellow{' '}
+        <Link
+          target="_blank"
+          className="text-inherit text-emerald-700 no-underline"
+          href="https://radio.seu.edu.cn/newenglish/txs_en/main.psp"
+        >
+          Xiaosi Tan
+        </Link>{' '}
         .
       </p>
       <p>
@@ -83,7 +124,9 @@ export default function Home({ authorDetails, pubs, projs }) {
 
       <strong>This page is under construction. Please check back later for more updates.</strong>
       <div>
-        <p className="hazel-header mb-2 mt-10 text-2xl font-bold">Project Spotlights</p>
+        <p className="hazel-header mb-2 mt-10 text-2xl font-bold dark:text-gray-100">
+          Project Spotlights
+        </p>
         {projs.map((proj, idx) => {
           const { title, description } = proj
           return (
@@ -102,47 +145,53 @@ export default function Home({ authorDetails, pubs, projs }) {
         })}
       </div>
       <div>
-        <p className="hazel-header mb-2 mt-10 text-2xl font-bold">Selected publications</p>
-        {pubs.map((pub, idx) => {
-          const { date, title, abstract, author, tags, links, imgSrc } = pub
-          const name = 'Huijun Han'
-          const regex = new RegExp(`(${name})`, 'gi')
-          const parts = author.split(regex)
-          return (
-            <div
-              key={idx}
-              className="space-y-2 xl:grid xl:grid-cols-3 xl:items-baseline xl:space-y-0"
-            >
-              <div className="xl:col-span-3">
-                <div>
-                  <h3 className="hazel-title my-0 text-xl font-medium leading-8 tracking-tight text-gray-900 dark:text-gray-100">
-                    {title}
-                  </h3>
-                  {parts.map((part, index) =>
-                    part.toLowerCase() === name.toLowerCase() ? (
-                      <span key={index} style={{ fontWeight: 'bold' }}>
-                        {part}
-                      </span>
-                    ) : (
-                      part
-                    )
-                  )}
-                  <div className="text-base font-medium leading-6 text-gray-500 dark:text-gray-400">
-                    <time dateTime={date}>{formatDate(date)}</time>
+        <p className="hazel-header mb-2 mt-10 text-2xl font-bold dark:text-gray-100">
+          Selected publications
+        </p>
+        {pubs
+          .slice()
+          .sort((a, b) => new Date(b.date) - new Date(a.date))
+
+          .map((pub, idx) => {
+            const { date, title, abstract, author, tags, links, imgSrc } = pub
+            const name = 'Huijun Han'
+            const regex = new RegExp(`(${name})`, 'gi')
+            const parts = author.split(regex)
+            return (
+              <div
+                key={idx}
+                className="space-y-2 xl:grid xl:grid-cols-3 xl:items-baseline xl:space-y-0"
+              >
+                <div className="xl:col-span-3">
+                  <div>
+                    <h3 className="hazel-title my-0 text-xl font-medium leading-8 tracking-tight text-gray-900 dark:text-gray-100">
+                      {title}
+                    </h3>
+                    {parts.map((part, index) =>
+                      part.toLowerCase() === name.toLowerCase() ? (
+                        <span key={index} style={{ fontWeight: 'bold' }}>
+                          {part}
+                        </span>
+                      ) : (
+                        part
+                      )
+                    )}
+                    <div className="text-base font-medium leading-6 text-gray-500 dark:text-gray-400">
+                      <time dateTime={date}>{formatDate(date)}</time>
+                    </div>
+                  </div>
+                  {/* <div className="prose max-w-none text-gray-500 dark:text-gray-400">{abstract}</div> */}
+                  <div className="text-gray-500 underline dark:text-gray-400">
+                    {links.map(({ name, link }, idx) => (
+                      <Link key={idx} href={link} className="pr-6 text-gray-900 dark:text-gray-100">
+                        {name}
+                      </Link>
+                    ))}
                   </div>
                 </div>
-                {/* <div className="prose max-w-none text-gray-500 dark:text-gray-400">{abstract}</div> */}
-                <div className="text-gray-500 underline dark:text-gray-400">
-                  {links.map(({ name, link }, idx) => (
-                    <Link key={idx} href={link} className="pr-6 text-gray-900 dark:text-gray-100">
-                      {name}
-                    </Link>
-                  ))}
-                </div>
               </div>
-            </div>
-          )
-        })}
+            )
+          })}
       </div>
     </div>
   )
