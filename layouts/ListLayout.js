@@ -54,8 +54,19 @@ export default function ListLayout({ pubs, title, initialDisplayPubs = [], pagin
             .slice()
             .sort((a, b) => new Date(b.date) - new Date(a.date))
             .map((pub, idx) => {
-              const { date, title, author, abstract, tags, links, imgSrc, width, height, hrefer } =
-                pub
+              const {
+                date,
+                title,
+                author,
+                abstract,
+                tags,
+                links,
+                imgSrc,
+                width,
+                height,
+                hrefer,
+                published,
+              } = pub
               const name = 'Huijun Han'
               const regex = new RegExp(`(${name})`, 'gi')
               const parts = author.split(regex)
@@ -87,6 +98,9 @@ export default function ListLayout({ pubs, title, initialDisplayPubs = [], pagin
                         <h3 className="hazel-pub-title text-2xl font-bold leading-8 tracking-tight">
                           <p className="text-gray-900 dark:text-gray-100">{title}</p>
                         </h3>
+                      </div>
+                      <div className="hazel-pub-title text-base font-medium leading-6 text-gray-500 dark:text-gray-400">
+                        <p>{published} </p>
                       </div>
 
                       <div className="hazel-pub-author flex flex-wrap">

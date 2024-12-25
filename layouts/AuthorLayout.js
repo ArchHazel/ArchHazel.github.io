@@ -9,8 +9,8 @@ export default function AuthorLayout({ children, frontMatter }) {
     <>
       <PageSEO title={`About - ${name}`} description={`About me - ${name}`} />
       <div className="divide-y divide-gray-200 dark:divide-gray-700">
-        <div className="items-start space-y-2 xl:grid xl:grid-cols-3 xl:gap-x-8 xl:space-y-0">
-          <div className="flex flex-col items-center pt-8">
+        <div className="items-start space-y-2 xl:grid xl:grid-cols-5 xl:gap-x-8 xl:space-y-0">
+          <div className="sticky top-0 flex hidden flex-col items-center pt-8 xl:block">
             <Image
               src={avatar}
               alt="avatar"
@@ -27,7 +27,7 @@ export default function AuthorLayout({ children, frontMatter }) {
               <SocialIcon kind="github" href={github} />
             </div>
           </div>
-          <div className="hazel max-w-none pt-8 pb-8 dark:prose-dark xl:col-span-2">{children}</div>
+          <div className="hazel max-w-none pt-8 pb-8 dark:prose-dark xl:col-span-4">{children}</div>
         </div>
       </div>
     </>

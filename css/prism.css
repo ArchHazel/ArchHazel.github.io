@@ -149,7 +149,7 @@
 
 .hazel-header {
   color: rgb(0, 0, 0);
-  margin-top: 2rem;
+  margin-top: 1.2rem;
 }
 
 .hazel-title {
@@ -170,4 +170,24 @@
 .hazel-pub-author {
   line-height: normal;
   font-family: auto;
+}
+
+.left {
+  width: 20%;
+  /* background-color: lightblue; 可选：背景颜色用于示意 */
+}
+
+.right {
+  width: 70%;
+  /* background-color: lightcoral; 可选：背景颜色用于示意 */
+}
+
+.left_project {
+  width: 30%;
+  /* background-color: lightblue; 可选：背景颜色用于示意 */
+}
+
+.right_project {
+  width: 30%;
+  /* background-color: lightblue; 可选：背景颜色用于示意 */
 }

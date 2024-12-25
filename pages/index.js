@@ -12,6 +12,7 @@ import formatDate from '@/lib/utils/formatDate'
 import Tag from '@/components/Tag'
 import { useTheme } from 'next-themes'
 const DEFAULT_LAYOUT = 'AuthorLayout'
+import Image from 'next/image'
 
 export async function getStaticProps() {
   const authorDetails = await getFileBySlug('authors', ['default'])
@@ -57,13 +58,22 @@ export default function Home({ authorDetails, pubs, projs }) {
         >
           the University of Hong Kong
         </Link>
-        {''}, working with Postdoctoral Fellow{' '}
+        {''}, working with
+        {/* Postdoctoral Fellow{' '}
         <Link
           target="_blank"
           className="text-inherit text-emerald-700 no-underline"
           href="https://cong-yi.github.io/"
         >
           Congyi Zhang
+        </Link>{' '} */}{' '}
+        Prof.{' '}
+        <Link
+          target="_blank"
+          className="text-inherit text-emerald-700 no-underline"
+          href="https://facdent.hku.hk/people/professoriate-staff/profile/drgumin"
+        >
+          Min Gu
         </Link>{' '}
         and Prof.{' '}
         <Link
@@ -73,7 +83,8 @@ export default function Home({ authorDetails, pubs, projs }) {
         >
           Lifeng Zhu
         </Link>
-        . I was a graduate with honors, earning my B.Eng. degree from{' '}
+        . I was a graduate with honors, earning my B.Eng. degree in Measurement and Control
+        Technology and Instrumentation from{' '}
         <Link
           className=" text-inherit text-emerald-700 no-underline"
           href="https://ins.seu.edu.cn/yk_english/main.htm"
@@ -121,8 +132,6 @@ export default function Home({ authorDetails, pubs, projs }) {
         <span className="font-medium">Computer Vision</span>.
       </p>
 
-      <strong>This page is under construction. Please check back later for more updates.</strong>
-
       <div>
         <p className="hazel-header  text-2xl font-bold dark:text-gray-100">Selected publications</p>
         {pubs
@@ -130,7 +139,8 @@ export default function Home({ authorDetails, pubs, projs }) {
           .sort((a, b) => new Date(b.date) - new Date(a.date))
 
           .map((pub, idx) => {
-            const { date, title, abstract, author, tags, links, imgSrc, published } = pub
+            const { date, title, abstract, author, tags, links, imgSrc, published, width, height } =
+              pub
             const name = 'Huijun Han'
             const regex = new RegExp(`(${name})`, 'gi')
             const parts = author.split(regex)
@@ -139,36 +149,55 @@ export default function Home({ authorDetails, pubs, projs }) {
                 key={idx}
                 className="space-y-2 xl:grid xl:grid-cols-3 xl:items-baseline xl:space-y-0"
               >
-                <div className="xl:col-span-3">
-                  <div>
-                    <h3 className="hazel-title my-0 text-xl font-medium leading-8 tracking-tight text-gray-900 dark:text-gray-100">
-                      {title}
-                    </h3>
+                {/* <div class = "flex"> */}
+
+                <div className="flex xl:col-span-10">
+                  <div className="left mt-5 mr-2">
+                    <Image
+                      src={imgSrc}
+                      alt="avatar"
+                      width={width}
+                      height={height}
+                      className="object-cover object-center"
+                      unoptimized
+                    />
                   </div>
-                  <div className="hazel-author">
-                    {parts.map((part, index) =>
-                      part.toLowerCase() === name.toLowerCase() ? (
-                        <span key={index} style={{ fontWeight: 'bold' }}>
-                          {part}
-                        </span>
-                      ) : (
-                        part
-                      )
-                    )}
-                    {/* <div className="text-base font-medium leading-6 text-gray-500 dark:text-gray-400">
-                      <time dateTime={date}>{formatDate(date)}</time>
-                    </div> */}
-                    <div className="text-base font-medium leading-6 text-gray-500 dark:text-gray-400">
-                      <p>{published} </p>
+
+                  <div className="right">
+                    <div>
+                      <h3 className="hazel-title my-0 text-xl font-medium leading-8 tracking-tight text-gray-900 dark:text-gray-100">
+                        {title}
+                      </h3>
                     </div>
-                  </div>
-                  {/* <div className="prose max-w-none text-gray-500 dark:text-gray-400">{abstract}</div> */}
-                  <div className="hazel-pub-title text-gray-500 underline dark:text-gray-400">
-                    {links.map(({ name, link }, idx) => (
-                      <Link key={idx} href={link} className="pr-6 text-gray-900 dark:text-gray-100">
-                        {name}
-                      </Link>
-                    ))}
+                    <div className="hazel-author">
+                      {parts.map((part, index) =>
+                        part.toLowerCase() === name.toLowerCase() ? (
+                          <span key={index} style={{ fontWeight: 'bold' }}>
+                            {part}
+                          </span>
+                        ) : (
+                          part
+                        )
+                      )}
+                      {/* <div className="text-base font-medium leading-6 text-gray-500 dark:text-gray-400">
+                        <time dateTime={date}>{formatDate(date)}</time>
+                      </div> */}
+                      <div className="text-base font-medium leading-6 text-gray-500 dark:text-gray-400">
+                        <p>{published} </p>
+                      </div>
+                    </div>
+
+                    <div className="hazel-pub-title text-gray-500 underline dark:text-gray-400">
+                      {links.map(({ name, link }, idx) => (
+                        <Link
+                          key={idx}
+                          href={link}
+                          className="pr-6 text-gray-900 dark:text-gray-100"
+                        >
+                          {name}
+                        </Link>
+                      ))}
+                    </div>
                   </div>
                 </div>
               </div>
@@ -178,17 +207,33 @@ export default function Home({ authorDetails, pubs, projs }) {
       <div>
         <p className="hazel-header  text-2xl font-bold dark:text-gray-100">Project Spotlights</p>
         {projs.map((proj, idx) => {
-          const { title, description } = proj
+          const { title, imgs } = proj
           return (
             <div
               key={idx}
               className="space-y-2 xl:grid xl:grid-cols-3 xl:items-baseline xl:space-y-0"
             >
               <div className="xl:col-span-3">
-                <h3 className="hazel-title my-0 text-xl font-medium leading-8 tracking-tight text-gray-900 dark:text-gray-100">
-                  {title}
-                </h3>
-                <div className=" max-w-none text-gray-500 dark:text-gray-400">{description}</div>
+                <div className="mt-5 flex">
+                  <div className="left_project mr-5">
+                    <Image
+                      className="object-cover object-center"
+                      src={imgs[0].link}
+                      width={imgs[0].width}
+                      height={imgs[0].height}
+                      unoptimized
+                    />
+                  </div>
+
+                  <div className="hazel-author">
+                    <h3 className="hazel-title my-0 text-xl font-medium leading-8 tracking-tight text-gray-900 dark:text-gray-100">
+                      {title}
+                    </h3>
+                    <p className="mt-2"> flocking system simulation and obstacle steering</p>
+                    <p> platform: OpenGL</p>
+                  </div>
+                </div>
+                {/* <div className=" max-w-none text-gray-500 dark:text-gray-400">{description}</div> */}
               </div>
             </div>
           )
