@@ -13,7 +13,7 @@ const publicationsData = [
     published: 'IEEE Transactions on Circuits and Systems II: Express Briefs',
     width: 412,
     height: 243,
-    date: '2019/10',
+    date: '2019-10-02',
     imgSrc: '/static/images/wnsa.png',
     links: [{ name: 'Paper', link: 'https://ieeexplore.ieee.org/document/9170544' }],
     show: true,
@@ -25,7 +25,7 @@ const publicationsData = [
       'Solving point-wise feature correspondence in visual data is a fundamental problem in computer vision. A powerful model that addresses this challenge is to formulate it as graph matching, which entails solving a Quadratic Assignment Problem (QAP) with node-wise and edge-wise constraints. However, solving such a QAP can be both expensive and difficult due to numerous local extreme points. In this work, we introduce a novel linear model and solver designed to accelerate the computation of graph matching. Specifically, we employ a positive semi-definite matrix approximation to establish the structural attribute constraint. We then transform the original QAP into a linear model that is concave for maximization. This model can subsequently be solved using the Sinkhorn optimal transport algorithm, known for its enhanced efficiency and numerical stability compared to existing approaches. Experimental results on the widely used benchmark PascalVOC showcase that our algorithm achieves state-of-the-art performance with significantly improved efficiency. We plan to release our code for public access.',
     tags: ['Image Feature Matching', 'Quadratic Assignment Problem', 'Quadratic Graph Matching'],
     author: 'Yongqing Liang, Huijun Han and Xin Li',
-    date: '2023/9',
+    date: '2023-09-02',
     imgSrc: '/static/images/clap.png',
     published:
       'The 19th International Symposium on Visual Computing (ISVC 2024, Oral Paper, Springer Best Paper Award)',
@@ -48,7 +48,7 @@ const publicationsData = [
     tags: ['Virtual Reality', 'Interior Design', 'Room Layout'],
     author:
       'Huijun Han, Yongqing Liang, Yuanlong Zhou, Wenping Wang, Edgar J. Rojas-Muñoz and Xin Li',
-    date: '2024/12',
+    date: '2024-12-02',
     imgSrc: '/static/images/aurora.gif',
     width: 400,
     height: 300,
@@ -70,7 +70,7 @@ const publicationsData = [
     tags: ['Computing methodologies', 'Computer graphics', 'Shape modeling', 'Shape analysis'],
     author:
       'Jiaxin Lu†, Yongqing Liang†, Huijun Han†, Jiacheng Hua†, Junfeng Jiang, Xin Li, Qixing Huang (†: equal contribution)',
-    date: '2024/10',
+    date: '2024-10-02',
     width: 2400,
     height: 1370,
     imgSrc: '/static/images/reassembly-suvey.png',
@@ -85,7 +85,7 @@ const publicationsData = [
     tags: ['Computer-aided detection and diagnosis', 'geometric deep learning', 'visualization'],
     author:
       'Huijun Han, Congyi Zhang, Lifeng Zhu, Pradeep Singh, Richard Tai-Chiu Hsung, Yiu Yan Leung, Taku Komurab, Wenping Wang, Min Gu',
-    date: '2025/1',
+    date: '2025-01-02',
     width: 640,
     height: 368,
     imgSrc: '/static/images/orho.gif',

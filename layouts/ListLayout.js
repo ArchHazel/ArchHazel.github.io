@@ -79,7 +79,7 @@ export default function ListLayout({ pubs, title, initialDisplayPubs = [], pagin
                       <dd className="text-base font-medium leading-6 text-gray-500 dark:text-gray-400">
                         <time dateTime={date}>{formatDate(date)}</time>
                       </dd>
-                      <div className="w-full">
+                      <div className="w-[90%]">
                         <Image
                           className="object-cover object-center "
                           alt={title}
@@ -91,7 +91,7 @@ export default function ListLayout({ pubs, title, initialDisplayPubs = [], pagin
                       </div>
                     </dl>
 
-                    <div className="space-y-2 px-8 xl:col-span-3">
+                    <div className="space-y-2 px-4 xl:col-span-3">
                       <div>
                         <h3 className="hazel-pub-title text-2xl font-bold leading-8 tracking-tight">
                           <p className="text-gray-900 dark:text-gray-100">{title}</p>
