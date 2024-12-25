@@ -195,3 +195,7 @@
   width: 30%;
   /* background-color: lightblue; 可选：背景颜色用于示意 */
 }
+
+.italic-text {
+  font-style: italic;
+}

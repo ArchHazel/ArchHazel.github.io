@@ -97,7 +97,7 @@ export default function ListLayout({ pubs, title, initialDisplayPubs = [], pagin
                           <p className="text-gray-900 dark:text-gray-100">{title}</p>
                         </h3>
                       </div>
-                      <div className="hazel-pub-title text-base font-medium leading-6 text-gray-500 dark:text-gray-400">
+                      <div className="italic-text hazel-pub-title text-base font-medium leading-6 text-gray-500 dark:text-gray-400">
                         <p>{published} </p>
                       </div>
 

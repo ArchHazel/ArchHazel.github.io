@@ -22,13 +22,6 @@ export async function getStaticProps() {
 }
 
 export default function Home({ authorDetails, pubs, projs }) {
-  const { theme, resolvedTheme } = useTheme()
-
-  const favicon =
-    theme === 'dark' || resolvedTheme === 'dark' ? '/favicon/logo_night.jpg' : '/favicon/logo.png'
-  // <link rel="icon" href = {theme === 'dark'  || resolvedTheme === "dark" ? '/favicon/logo_night.jpg' : '/favicon/logo.png'} type="image/x-icon" /> </Head>
-  // change the favicon based on theme
-
   const { mdxSource, frontMatter } = authorDetails
   const source = (
     <div>
@@ -165,7 +158,7 @@ export default function Home({ authorDetails, pubs, projs }) {
 
                   <div className="right normal-line-height flex flex-col justify-center">
                     <div>
-                      <p className="hazel-title bold-text my-0 font-medium leading-8 tracking-tight text-gray-900 dark:text-gray-100 xl:text-xl">
+                      <p className="hazel-title bold-text my-0 mb-0.5 font-medium leading-8 tracking-tight text-gray-900 dark:text-gray-100 xl:text-xl">
                         {title}
                       </p>
                     </div>
@@ -179,7 +172,7 @@ export default function Home({ authorDetails, pubs, projs }) {
                           part
                         )
                       )}
-                      <div className="text-base font-medium leading-6 text-gray-500 dark:text-gray-400">
+                      <div className="italic-text text-base font-medium leading-6 text-gray-500 dark:text-gray-400">
                         <p className="normal-line-height">{published} </p>
                       </div>
                     </div>
@@ -223,7 +216,7 @@ export default function Home({ authorDetails, pubs, projs }) {
                   </div>
 
                   <div className=" flex flex-col justify-center">
-                    <p className="bold-text my-0 font-medium leading-8 tracking-tight text-gray-900 dark:text-gray-100 xl:text-xl">
+                    <p className="normal-line-height bold-text my-0 mb-0.5 font-medium leading-8 tracking-tight text-gray-900 dark:text-gray-100 xl:text-xl">
                       {title}
                     </p>
                     <p className="normal-line-height ">
