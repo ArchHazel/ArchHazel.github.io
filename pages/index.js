@@ -165,9 +165,9 @@ export default function Home({ authorDetails, pubs, projs }) {
 
                   <div className="right">
                     <div>
-                      <h3 className="hazel-title my-0 text-xl font-medium leading-8 tracking-tight text-gray-900 dark:text-gray-100">
+                      <p className="hazel-title bold-text my-0 font-medium leading-8 tracking-tight text-gray-900 dark:text-gray-100 xl:text-xl">
                         {title}
-                      </h3>
+                      </p>
                     </div>
                     <div className="hazel-author hidden xl:block">
                       {parts.map((part, index) =>
