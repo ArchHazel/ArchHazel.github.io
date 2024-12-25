@@ -223,9 +223,9 @@ export default function Home({ authorDetails, pubs, projs }) {
                   </div>
 
                   <div className="hazel-author">
-                    <h3 className=" my-0 text-xl font-medium leading-8 tracking-tight text-gray-900 dark:text-gray-100">
+                    <p className="my-0 text-xl font-bold font-medium leading-8 tracking-tight text-gray-900 dark:text-gray-100">
                       {title}
-                    </h3>
+                    </p>
                     <p className="mt-2"> flocking system simulation and obstacle steering</p>
                     <p> platform: OpenGL</p>
                   </div>
