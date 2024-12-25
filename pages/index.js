@@ -152,24 +152,24 @@ export default function Home({ authorDetails, pubs, projs }) {
                 {/* <div class = "flex"> */}
 
                 <div className="flex xl:col-span-10">
-                  <div className="left mt-5 mr-2">
+                  <div className="left mt-5 mr-2 flex items-center justify-center">
                     <Image
                       src={imgSrc}
                       alt={title}
                       width={width}
                       height={height}
-                      className="object-cover object-center"
+                      className="mx-auto object-cover object-center"
                       unoptimized
                     />
                   </div>
 
-                  <div className="right">
+                  <div className="right normal-line-height flex flex-col justify-center">
                     <div>
                       <p className="hazel-title bold-text my-0 font-medium leading-8 tracking-tight text-gray-900 dark:text-gray-100 xl:text-xl">
                         {title}
                       </p>
                     </div>
-                    <div className="hazel-author hidden xl:block">
+                    <div className="hazel-author ">
                       {parts.map((part, index) =>
                         part.toLowerCase() === name.toLowerCase() ? (
                           <span key={index} style={{ fontWeight: 'bold' }}>
@@ -180,11 +180,11 @@ export default function Home({ authorDetails, pubs, projs }) {
                         )
                       )}
                       <div className="text-base font-medium leading-6 text-gray-500 dark:text-gray-400">
-                        <p>{published} </p>
+                        <p className="normal-line-height">{published} </p>
                       </div>
                     </div>
 
-                    <div className="hazel-pub-title text-gray-500 underline dark:text-gray-400">
+                    <div className=" normal-line-height hazel-pub-title text-gray-500 underline dark:text-gray-400">
                       {links.map(({ name, link }, idx) => (
                         <Link
                           key={idx}
@@ -212,9 +212,9 @@ export default function Home({ authorDetails, pubs, projs }) {
             >
               <div className="xl:col-span-3">
                 <div className="mt-5 flex">
-                  <div className="left_project mr-5">
+                  <div className="left_project mr-5 flex items-center justify-center">
                     <Image
-                      className="object-cover object-center"
+                      className="mx-auto object-cover object-center"
                       src={imgs[0].link}
                       width={imgs[0].width}
                       height={imgs[0].height}
@@ -222,12 +222,18 @@ export default function Home({ authorDetails, pubs, projs }) {
                     />
                   </div>
 
-                  <div>
+                  <div className=" flex flex-col justify-center">
                     <p className="bold-text my-0 font-medium leading-8 tracking-tight text-gray-900 dark:text-gray-100 xl:text-xl">
                       {title}
                     </p>
-                    <p className="mt-2"> flocking system simulation and obstacle steering</p>
-                    <p> platform: OpenGL</p>
+                    <p className="normal-line-height ">
+                      {' '}
+                      flocking system simulation and obstacle steering
+                    </p>
+                    <p className="normal-line-height text-base font-medium leading-6 text-gray-500 dark:text-gray-400">
+                      {' '}
+                      platform: OpenGL
+                    </p>
                   </div>
                 </div>
                 {/* <div className=" max-w-none text-gray-500 dark:text-gray-400">{description}</div> */}

@@ -173,7 +173,9 @@
   line-height: normal;
   font-family: auto;
 }
-
+.normal-line-height {
+  line-height: normal;
+}
 .left {
   width: 20%;
   /* background-color: lightblue; 可选：背景颜色用于示意 */
@@ -185,7 +187,7 @@
 }
 
 .left_project {
-  width: 30%;
+  width: 20%;
   /* background-color: lightblue; 可选：背景颜色用于示意 */
 }
 
