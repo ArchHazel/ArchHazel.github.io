@@ -79,17 +79,15 @@ export default function ListLayout({ pubs, title, initialDisplayPubs = [], pagin
                       <dd className="text-base font-medium leading-6 text-gray-500 dark:text-gray-400">
                         <time dateTime={date}>{formatDate(date)}</time>
                       </dd>
-                      <div className="relative h-36 w-full">
-                        <a href={hrefer}>
-                          <Image
-                            className="object-cover object-center "
-                            alt={title}
-                            src={imgSrc}
-                            layout="intrinsic" // Ensure the aspect ratio is maintained
-                            width={width}
-                            height={height}
-                          />
-                        </a>
+                      <div className="w-full">
+                        <Image
+                          className="object-cover object-center "
+                          alt={title}
+                          src={imgSrc}
+                          layout="intrinsic" // Ensure the aspect ratio is maintained
+                          width={width}
+                          height={height}
+                        />
                       </div>
                     </dl>
 
