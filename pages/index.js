@@ -155,7 +155,7 @@ export default function Home({ authorDetails, pubs, projs }) {
                   <div className="left mt-5 mr-2">
                     <Image
                       src={imgSrc}
-                      alt="avatar"
+                      alt={title}
                       width={width}
                       height={height}
                       className="object-cover object-center"
@@ -169,7 +169,7 @@ export default function Home({ authorDetails, pubs, projs }) {
                         {title}
                       </h3>
                     </div>
-                    <div className="hazel-author">
+                    <div className="hazel-author hidden xl:block">
                       {parts.map((part, index) =>
                         part.toLowerCase() === name.toLowerCase() ? (
                           <span key={index} style={{ fontWeight: 'bold' }}>
@@ -179,9 +179,6 @@ export default function Home({ authorDetails, pubs, projs }) {
                           part
                         )
                       )}
-                      {/* <div className="text-base font-medium leading-6 text-gray-500 dark:text-gray-400">
-                        <time dateTime={date}>{formatDate(date)}</time>
-                      </div> */}
                       <div className="text-base font-medium leading-6 text-gray-500 dark:text-gray-400">
                         <p>{published} </p>
                       </div>
@@ -226,7 +223,7 @@ export default function Home({ authorDetails, pubs, projs }) {
                   </div>
 
                   <div className="hazel-author">
-                    <h3 className="hazel-title my-0 text-xl font-medium leading-8 tracking-tight text-gray-900 dark:text-gray-100">
+                    <h3 className=" my-0 text-xl font-medium leading-8 tracking-tight text-gray-900 dark:text-gray-100">
                       {title}
                     </h3>
                     <p className="mt-2"> flocking system simulation and obstacle steering</p>
