@@ -79,12 +79,12 @@ export default function ListLayout({ pubs, title, initialDisplayPubs = [], pagin
                       <dd className="text-base font-medium leading-6 text-gray-500 dark:text-gray-400">
                         <time dateTime={date}>{formatDate(date)}</time>
                       </dd>
-                      <div className="w-[90%]">
+                      <div className="flex  max-w-[90%] items-center justify-center">
                         <Image
                           className="object-cover object-center "
                           alt={title}
                           src={imgSrc}
-                          layout="intrinsic" // Ensure the aspect ratio is maintained
+                          // layout="intrinsic" // Ensure the aspect ratio is maintained
                           width={width}
                           height={height}
                         />

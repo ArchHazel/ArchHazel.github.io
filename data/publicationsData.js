@@ -11,8 +11,8 @@ const publicationsData = [
       'weighted Neumann-series approximation',
     ],
     published: 'IEEE Transactions on Circuits and Systems II: Express Briefs',
-    width: 412,
-    height: 243,
+    width: 500,
+    height: 295,
     date: '2019-10-02',
     imgSrc: '/static/images/wnsa.png',
     links: [{ name: 'Paper', link: 'https://ieeexplore.ieee.org/document/9170544' }],
@@ -36,8 +36,8 @@ const publicationsData = [
       },
     ],
     show: true,
-    width: 2098,
-    height: 958,
+    width: 500,
+    height: 228,
     hrefer: 'https://arxiv.org/pdf/2410.17101',
   },
   {
@@ -50,8 +50,8 @@ const publicationsData = [
       'Huijun Han, Yongqing Liang, Yuanlong Zhou, Wenping Wang, Edgar J. Rojas-Muñoz and Xin Li',
     date: '2024-12-02',
     imgSrc: '/static/images/aurora.gif',
-    width: 400,
-    height: 300,
+    width: 500,
+    height: 375,
     published:
       'The 19th ACM SIGGRAPH International Conference on Virtual-Reality Continuum and its Applications in Industry (VRCAI), 2024',
     links: [
@@ -71,8 +71,8 @@ const publicationsData = [
     author:
       'Jiaxin Lu†, Yongqing Liang†, Huijun Han†, Jiacheng Hua†, Junfeng Jiang, Xin Li, Qixing Huang (†: equal contribution)',
     date: '2024-10-02',
-    width: 2400,
-    height: 1370,
+    width: 500,
+    height: 285,
     imgSrc: '/static/images/reassembly-suvey.png',
     published: "Eurographics (EG)  '25 STARs (conditionally accept with minor revisions)",
     links: [{ name: ' Paper', link: 'https://arxiv.org/pdf/2410.14770' }],
@@ -86,8 +86,8 @@ const publicationsData = [
     author:
       'Huijun Han, Congyi Zhang, Lifeng Zhu, Pradeep Singh, Richard Tai-Chiu Hsung, Yiu Yan Leung, Taku Komurab, Wenping Wang, Min Gu',
     date: '2025-01-02',
-    width: 640,
-    height: 368,
+    width: 500,
+    height: 291,
     imgSrc: '/static/images/orho.gif',
     published: 'submitted to Computer Methods and Programs in Biomedicine (CMPB, under revision)',
     links: [
