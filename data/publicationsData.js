@@ -87,7 +87,7 @@ const publicationsData = [
       'Huijun Han, Congyi Zhang, Lifeng Zhu, Pradeep Singh, Richard Tai-Chiu Hsung, Yiu Yan Leung, Taku Komurab, Wenping Wang, Min Gu',
     date: '2025-01-02',
     width: 500,
-    height: 291,
+    height: 342,
     imgSrc: '/static/images/orho.gif',
     published: 'submitted to Computer Methods and Programs in Biomedicine (CMPB, under revision)',
     links: [
