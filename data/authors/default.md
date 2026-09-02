@@ -1,7 +1,7 @@
 ---
 name: Huijun Han
 avatar: /static/images/profile.jpg
-email: hazelhan@tamu.edu
+email: huijun.han@stonybrook.edu
 github: https://github.com/ArchHazel/
 ---
 
