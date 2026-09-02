@@ -160,6 +160,9 @@ export default function Home({ authorDetails, pubs }) {
           </p>
           <ul className="my-0 list-disc space-y-1 pl-5 text-sm leading-normal text-gray-700 dark:text-gray-300">
             <li>ACM/IEEE Conference on Connected Health (CHASE) 2026</li>
+            <li>
+              EAI International Conference on Mobile and Ubiquitous Systems (MobiQuitous) 2026
+            </li>
           </ul>
         </div>
       </div>
