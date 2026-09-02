@@ -2,6 +2,39 @@ import { author } from './siteMetadata'
 
 const publicationsData = [
   {
+    title:
+      'ScoreKFT: Reliable Range Estimation for Single Person Tracking in Clutter-Rich Indoor Environments with UWB Sensors',
+    abstract:
+      'Reliable indoor range estimation to the human body with ultra-wideband (UWB) sensor remains highly challenging and an open problem in realistic home-like environments due to persistent multipath, intermittent line-of-sight, and long-range sensing. This work presents ScoreKFT, a scoring-based method for reliable indoor human body range estimation. The method combines energy intensity, spatial compactness, and range priors to identify the most likely human body reflection candidate from noisy Range–Doppler (RD) heatmaps, followed by short-term temporal validation to stabilize distance estimates. We evaluate ScoreKFT in a four-room apartment-scale environment with 12 long-duration (30—40 min) sessions of natural daily activities, using validated depth derived trajectories as reference to benchmark tracking accuracy. ScoreKFT achieves 0.958 m mean range error and sub-2 m trajectory accuracy, outperforming two recent baselines, Scaling and MTrack by 33.4% and 31.3% respectively. We also find that once ranges are reliable, standard particle filtering achieves high tracking accuracy, showing that range estimation, not triangulation or tracking, is the primary challenge for robust distance-based single person tracking in realistic multi-room environments.',
+    tags: ['Range Estimation', 'Indoor Localization', 'UWB Sensor', 'Single Person Tracking'],
+    author: 'Haotian Fu, Huijun Han, Mengjing Liu, Zongxing Xie and Fan Ye',
+    date: '2026-09-15',
+    imgSrc: '/static/images/scorekft.png',
+    width: 500,
+    height: 209,
+    published: 'IEEE Global Communications Conference (GLOBECOM 2026, accepted), September 2026',
+    links: [],
+    show: true,
+    hrefer: '',
+  },
+  {
+    title:
+      'Reliable Long-Term Calibration of Vision-Based Ground Truth for Home-Based Human Tracking',
+    abstract:
+      'Accurate spatial ground truth is essential for developing and evaluating home-based wireless human tracking systems in home-like environments. Vision-based sensing is commonly used to provide such ground truth, but long-term deployment is challenged by temporal camera drift, which degrades calibration quality and trajectory consistency over time. In this work, we present a modular vision-based ground-truth system for long-term human tracking in a simulated home environment. The system integrates markerless multi-camera calibration, per-camera pose recovery, and RGB-D trajectory extraction to generate consistent global human trajectories over time. To support deployment under limited camera overlap, we adopt a two-stage feed-forward calibration strategy and compare it against classical and recent markerless RGB-D pose recovery methods. Experimental results show that the proposed calibration framework achieves a median trajectory error of 3.3 cm in a downstream RGB-D human trajectory extraction task, representing a 68.9% reduction compared to operating without periodic recalibration. The proposed system provides a practical ground-truth solution for longitudinal evaluation of home-based wireless human tracking systems.',
+    tags: ['Human Tracking', 'Camera Calibration', 'RGB-D', 'Health Sensing'],
+    author: 'Bunnavit Sawangpiriyakij, Huijun Han and Fan Ye',
+    date: '2026-08-05',
+    imgSrc: '/static/images/cam-cali.gif',
+    width: 500,
+    height: 330,
+    published:
+      'The IEEE/ACM Conference on Connected Health: Applications, Systems and Engineering Technologies (CHASE 2026), Pittsburgh, PA, USA, 446-451',
+    links: [{ name: 'Paper', link: 'https://doi.org/10.1109/CHASE69719.2026.00076' }],
+    show: true,
+    hrefer: 'https://doi.org/10.1109/CHASE69719.2026.00076',
+  },
+  {
     title: 'Approximate Expectation Propagation Massive MIMO Detector With Weighted Neumann-Series',
     abstract: `Expectation propagation (EP) achieves near-optimal performance for massive multiple-input multiple-output (MIMO) detection, however, at the cost of multiple expensive matrix inversions. An EP with approximation (EPA) algorithm has been introduced to address this issue, which maintains the good performance with only one matrix inversion for initialization. Nevertheless, the accuracy of this inversion has a strong impact on the convergence of EPA, which hinders the practical implementation of the algorithm. In this brief, a weighted Neumann series approximation (wNSA) is first proposed for explicit inverse matrix approximation, which attains enhanced convergence rate and accuracy compared to standard NSA for various MIMO antenna configurations. wNSA is then combined with EPA to propose an efficient, flexible, and hardware-friendly EPA-wNSA detector. Simulation results are illustrated to confirm the similar good performance of the proposed EPA-wNSA as EP. The hardware architecture of EPA-wNSA detector is also proposed and implemented on 65 nm CMOS technology. Implementation results show that this architecture achieves a throughput of 0.86 Gb/s, which outperforms state-of-the-art (SOA) EP-based detectors. `,
     author: 'Xiaosi Tan, Huijun Han, Muhao Li, Kai Sun, Yongming Huang, Xiaohu You and Chuan Zhang',
@@ -32,13 +65,13 @@ const publicationsData = [
     links: [
       {
         name: 'Paper',
-        link: 'https://arxiv.org/pdf/2410.17101',
+        link: 'https://doi.org/10.1007/978-3-031-77392-1_22',
       },
     ],
     show: true,
     width: 500,
     height: 228,
-    hrefer: 'https://arxiv.org/pdf/2410.17101',
+    hrefer: 'https://doi.org/10.1007/978-3-031-77392-1_22',
   },
   {
     title: 'AURORA: Automated Unleash of 3D Room Outlines for VR Applications',
@@ -55,12 +88,12 @@ const publicationsData = [
     published:
       'The 19th ACM SIGGRAPH International Conference on Virtual-Reality Continuum and its Applications in Industry (VRCAI), 2024',
     links: [
-      { name: 'Paper', link: 'https://arxiv.org/pdf/2412.11033' },
+      { name: 'Paper', link: 'https://doi.org/10.1145/3703619.3706036' },
       { name: 'Project Page', link: 'https://archhazel.github.io/aurora-webpage/' },
       { name: 'Code', link: 'https://github.com/ArchHazel/3D_indoor_reconstruction' },
     ],
     show: true,
-    hrefer: 'https://archhazel.github.io/aurora-webpage/',
+    hrefer: 'https://doi.org/10.1145/3703619.3706036',
   },
 
   {
@@ -74,10 +107,10 @@ const publicationsData = [
     width: 500,
     height: 285,
     imgSrc: '/static/images/reassembly-suvey.png',
-    published: "Eurographics (EG)  '25 STARs (conditionally accept with minor revisions)",
-    links: [{ name: ' Paper', link: 'https://arxiv.org/pdf/2410.14770' }],
+    published: 'Computer Graphics Forum (Eurographics 2025 STAR), Volume 44, Number 2, 2025',
+    links: [{ name: ' Paper', link: 'https://doi.org/10.1111/cgf.70081' }],
     show: true,
-    hrefer: 'https://arxiv.org/pdf/2410.14770',
+    hrefer: 'https://doi.org/10.1111/cgf.70081',
   },
   {
     title: 'Facial Surgery Preview Based on the Orthognathic Treatment Prediction',
@@ -89,9 +122,9 @@ const publicationsData = [
     width: 500,
     height: 342,
     imgSrc: '/static/images/orho.gif',
-    published: 'submitted to Computer Methods and Programs in Biomedicine (CMPB, under revision)',
+    published: 'Computer Methods and Programs in Biomedicine (CMPB), 267:108781, 2025',
     links: [
-      { name: 'Paper', link: 'https://arxiv.org/pdf/2412.11045' },
+      { name: 'Paper', link: 'https://doi.org/10.1016/j.cmpb.2025.108781' },
       {
         name: 'News Report',
         link: 'https://datahub.hku.hk/articles/dataset/Supporting_data_for_Revealing_the_Potential_of_3D_Facial_Imaging_Exploring_Feasibility_Reliability_and_ClinicalApplications_in_Craniofacial_Practice_/26820532',
@@ -99,7 +132,7 @@ const publicationsData = [
       { name: 'Code', link: 'https://github.com/ArchHazel/Orthognathics' },
     ],
     show: true,
-    hrefer: 'https://arxiv.org/pdf/2412.11045',
+    hrefer: 'https://doi.org/10.1016/j.cmpb.2025.108781',
   },
 ]
 

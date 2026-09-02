@@ -5,13 +5,8 @@ export default function Footer() {
   return (
     <footer>
       <div className="mt-16 flex flex-col items-center">
-        <div className="mono-type mb-2 flex space-x-2 text-sm text-gray-500 dark:text-gray-400">
-          <div>{siteMetadata.author}</div>
-          <div>{` • `}</div>
-          <div>{`© ${new Date().getFullYear()}`}</div>
-        </div>
         <div className="mono-type mb-8 text-sm text-gray-500 dark:text-gray-400">
-          <Link href="/">Powered by enthusiasm and {'\u2764'} .</Link>
+          {`© ${new Date().getFullYear()} ${siteMetadata.author}. All rights reserved.`}
         </div>
       </div>
     </footer>

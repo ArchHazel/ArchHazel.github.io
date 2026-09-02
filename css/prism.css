@@ -7,7 +7,7 @@
 
 /* Code title styles */
 .remark-code-title {
-  @apply rounded-t bg-gray-700 px-5 py-3  text-sm font-bold text-gray-200;
+  @apply rounded-t bg-gray-700 px-5 py-3 text-sm font-bold text-gray-200;
 }
 
 .remark-code-title + div > pre {
@@ -32,7 +32,7 @@
 }
 
 .highlight-line {
-  @apply -mx-4 border-l-4 border-primary-500  bg-gray-700 bg-opacity-50;
+  @apply -mx-4 border-l-4 border-primary-500 bg-gray-700 bg-opacity-50;
 }
 
 .line-number::before {
@@ -143,12 +143,18 @@
   color: rgb(26, 26, 23);
 }
 
+.dark .hazel {
+  color: rgb(209, 213, 219);
+}
+
 .hazel > div > p {
   margin-bottom: 0.8rem !important;
 }
+
 .bold-text {
   font-weight: bold;
 }
+
 .hazel-header {
   color: rgb(0, 0, 0);
   margin-top: 1.2rem;
@@ -173,9 +179,11 @@
   line-height: normal;
   font-family: auto;
 }
+
 .normal-line-height {
   line-height: normal;
 }
+
 .left {
   width: 20%;
   /* background-color: lightblue; 可选：背景颜色用于示意 */
